@@ -1,7 +1,7 @@
-version: "3.9"
+version: "3"
 services:
   proxy:
-    container_name: fullstack-proxy
+    container_name: M3-proxy
     build: ./docker/nginx
     ports:
       - "8000:80"
@@ -10,20 +10,20 @@ services:
       - ./src:/usr/share/nginx/html
 
   app:
-    container_name: fullstack-app
+    container_name: M3-app
     build: ./docker/php
     volumes:
       - ./docker/php/php.ini:/usr/local/php/php.ini
       - ./src:/var/www/html
 
   db:
-    container_name: fullstack-db
+    container_name: M3-db
     build: ./docker/mysql
     ports:
       - 3306:3306
     volumes:
       - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
-      - fullstack-db-volume:/var/lib/mysql
+      - M3-db-volume:/var/lib/mysql
     environment:
       MYSQL_DATABASE: laravel_db
       MYSQL_ROOT_PASSWORD: rootpassword
@@ -31,7 +31,7 @@ services:
       MYSQL_PASSWORD: password
 
   phpmyadmin:
-    container_name: fullstack-phpmyadmin
+    container_name: M3-phpmyadmin
     image: phpmyadmin/phpmyadmin
     ports:
       - 8001:80
@@ -41,4 +41,4 @@ services:
       - PMA_ROOT_PASSWORD=rootpassword
 
 volumes:
-  fullstack-db-volume:
+  M3-db-volume:
