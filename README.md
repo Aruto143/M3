@@ -12,6 +12,9 @@ docker-compose exec app php artisan key:generate
 # React Dev
 docker-compose exec app npm install
 docker-compose exec app npm run dev
+
+※コンテナの中でコマンド打ちたい場合
+docker-compose exec app sh
 ```
 
 ## 解説記事
