@@ -5,7 +5,7 @@ Docker, Laravel, React, and TypeScript.
 ```
 # Laravel Dev
 docker-compose up -d
-docker-comopse exec app composer install
+docker-compose exec app composer install
 cp src/.env.example src/.env
 docker-compose exec app php artisan key:generate
 
