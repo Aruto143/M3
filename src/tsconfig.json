@@ -1,16 +1,24 @@
 {
     "compilerOptions": {
-      "target": "ES2015",
-      "module": "commonjs",
-      "strict": true,
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "forceConsistentCasingInFileNames": true,
-      "jsx": "react"
+        "target": "ESNext",
+        "module": "ESNext",
+        "strict": true,
+        "esModuleInterop": false,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react-jsx",
+        "useDefineForClassFields": true,
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true
     },
-    "exclude": [
-        "vendor"
-    ],
+    "exclude": ["vendor"],
     "$schema": "https://json.schemastore.org/tsconfig",
-    "display": "Recommended"
-  }
+    "display": "Recommended",
+    "include": ["src"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+}
